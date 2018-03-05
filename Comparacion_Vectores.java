@@ -8,80 +8,61 @@
  * ya que están repetidos en ambos vectores.
  */
  
+import java.util.Arrays;
 import java.util.Scanner;
-public class Comparacion_Vectores
-{
-    public static void main(String Args[])      
-    {
-        System.out.println("El siguiente programa permite crear dos vectores A y B, los compara entre si y muestra los elementos no comunes");
-	System.out.println();
-    Comparacion_Vectores vectores = new Comparacion_Vectores();
-    // Metodo
-    vectores.solicitarDatos();
+ 
+public class Comparacion_Vectores {
+    public static void main(String[]args){
+        int n, m, i, k, dif;
+    Scanner leer = new Scanner(System.in);
+    int[] c; 
+    System.out.print("Número de elementos del vector A: ");
+    n=leer.nextInt();
+    System.out.print("Número de elementos del vector B: ");
+    m=leer.nextInt();
+    int a[] = new int [n];
+    for(i=0;i<n;i++){
+        System.out.print("Elemento del vector A: ["+i+"]");
+        a[i]=leer.nextInt();
     }
-    public void solicitarDatos()
-    {
-        Scanner tecla = new Scanner(System.in);
-        int [] vector_A;
-        int [] vector_B;
-        int [] vector_C;
-        
-        System.out.print("Digitar tamaño primera lista: ");
-        int tamano_1 = tecla.nextInt();
-        vector_A = new int[tamano_1];
-        int cual_1 = 1;
-        System.out.print("Digitar tamaño segunda lista: ");
-        int tamano_2 = tecla.nextInt();
-        vector_B = new int[tamano_2];
-        int cual_2 = 2;
-        System.out.println();
-        vector_A = deligenciasArreglos(vector_A, tamano_1, cual_1);
-        vector_B = deligenciasArreglos(vector_B, tamano_2, cual_2);
-        // Comparar el largo del los arreglos y tomar el menor
-        int tamano_3;
-        if(vector_A.length < vector_B.length)
-        {
-        tamano_3 = vector_A.length;
-        }
-        else
-        {
-        tamano_3 = vector_B.length;
-        }
-        vector_C = new int[tamano_3];
-        vector_C = compararArreglos(vector_A, vector_B, tamano_3);
-        System.out.println("Los datos en común entre los vectores son: ");
-        for(int i = 0; i < vector_C.length; i++)
-        {
-        System.out.println(vector_C[i]+" es un número en común");
-        }
-        }
-        public int[] deligenciasArreglos(int [] a, int b, int c)
-        {
-        Scanner tecla = new Scanner(System.in);
-        int [] arreglo;
-        arreglo = new int[b];
-        for(int i = 0; i < b; i++)
-        {
-        System.out.print("Digite el contenido de la lista "+c+": ");
-        arreglo[i] = tecla.nextInt();
-        }
-        System.out.println();
-        return arreglo;
+    int b[] = new int [m];
+    for(k=0;k<m;k++){
+        System.out.print("Elemento del vector B: ["+k+"]");
+        b[k]=leer.nextInt();
     }
-    public int[] compararArreglos(int [] a1, int [] b2, int c3)
-    {
-    int [] resultadoComparacion;
-    resultadoComparacion = new int[c3];
-    for(int i = 0; i < c3; i++)
-    {
-    for(int j = 0; j < c3; j++)
-    {
-    if(a1[i] == b2[j])
-    {
-    resultadoComparacion[i]=a1[i];
+    int aux = 0;
+    dif = 0;
+    for (int d=0; d<m; d++){
+        aux = b[d];
+        if(!duplicado(aux, a)){
+            dif++;
+        }
+            }
+    System.out.println("El tamaño del vector resultante C es "+ (dif+n));
+    c = new int [dif + n];
+    System.arraycopy(a, 0, c, 0, a.length); 
+    aux=0;
+    int g = 0;
+    for(i = 0; i < b.length; i++){
+        aux = b[i];
+        if(!duplicado(aux, a)){
+             c[a.length+g] = aux;
+             g++;
+        }
+     }
+    for (int j=0; j < c.length; j++) {
+         System.out.println("C["+j+"]: "+c[j]);
+     }
+    } 
+    public static boolean duplicado(int a, int array[]){
+    int index; 
+    Arrays.sort(array);
+        index=Arrays.binarySearch(array, a);
+    if(index < 0){
+            return false;
+    }else if (index >= 0){
+            return true;
     }
-    }
-    }
-    return resultadoComparacion;
+            return false;
     }
 }
