@@ -5,7 +5,7 @@
  * matemática: 𝜎 = √(1/(n-1))∑ (𝑥𝑖 − 𝑥̅)^2 Donde xi representa cada uno de los elementos almacenados en el arreglo o lista. 𝑥̅ representa el
  * promedio de los elementos del arreglo o lista y n es el número de elementos en el arreglo.
  */
-public class StandardDeviation {
+public class Desviacion_Estandar {
  
  public static void main(String[] args) {
  
