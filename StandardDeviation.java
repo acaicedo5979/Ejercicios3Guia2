@@ -75,7 +75,7 @@ public class StandardDeviation {
   System.out.println("\n5. Divide la suma de los cuadrados por (n) - 1 : ");
   double result = sum / (numbers.length - 1);
  
-  System.out.printf("%4.2f",resultado);
+  System.out.printf("%4.2f",result);
  
   double standardDeviation = Math.sqrt(result);
    
