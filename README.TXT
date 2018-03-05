@@ -1,12 +1,7 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+Serie de ejercicios propuestos en la guia 2 de construcción de software para la universidad EAN.
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+TITULO DEL PROYECTO: Ejercicios Guia 2
+VERSION: v1.0  
+AUTORES: Catalina Castellanos Sierra, Andres Camilo Caicedo Rios, Andres Cuellar Cossio
